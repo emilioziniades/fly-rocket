@@ -10,6 +10,7 @@ processes = []
 
 [experimental]
   auto_rollback = true
+  cmd = "./fly-rocket"
 
 [[services]]
   http_checks = []
