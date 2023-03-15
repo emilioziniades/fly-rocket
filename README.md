@@ -10,7 +10,15 @@ It also includes github actions for automatic deploy on push to main branch.
 
 Create a new repo, copy the contents of this repo into the new repo.
 
-Set up github actions by running the following command:
+To create a new deployment run
+
+```
+$ flyctl launch
+```
+
+Follow the prompts and a `fly.toml` file will be created for your project.
+
+To set up github actions to deploy on push, run the following commands
 
 ```
 $ flyctl auth login
