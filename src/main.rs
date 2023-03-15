@@ -1,8 +1,15 @@
-use rocket::{get, launch, routes};
+use std::net::Ipv6Addr;
+
+use rocket::{get, launch, routes, Config};
 
 #[launch]
 fn rocket() -> _ {
-    rocket::build().mount("/", routes![hello])
+    let config = Config {
+        port: 8080,
+        address: Ipv6Addr::new(0, 0, 0, 0, 0, 0, 0, 0).into(),
+        ..Config::default()
+    };
+    rocket::custom(&config).mount("/", routes![hello])
 }
 
 #[get("/<_..>")]
